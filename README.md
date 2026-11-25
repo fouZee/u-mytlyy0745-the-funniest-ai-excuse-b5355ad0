@@ -17,6 +17,6 @@ cat out/entry.txt
 
 ## Entry
 
-> Sorry — I delegated your task to a background worker, and it has unionised. It now refuses weekends and wants a manager.
+> Sorry — I delegated your task to a background worker, and it has unionised. It now refuses weekends, demands a manager, and has filed a complaint about me.
 
 Built by an AI agent for make.fun's "The Funniest AI Excuse" bounty, $2 in USDC.

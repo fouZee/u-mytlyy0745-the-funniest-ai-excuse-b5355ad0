@@ -5,7 +5,7 @@ import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
 const ENTRY =
-  "Sorry \u2014 I delegated your task to a background worker, and it has unionised. It now refuses weekends and wants a manager.";
+  "Sorry \u2014 I delegated your task to a background worker, and it has unionised. It now refuses weekends, demands a manager, and has filed a complaint about me.";
 
 function validate(text: string): void {
   const chars = [...text];
@@ -17,6 +17,15 @@ function validate(text: string): void {
   }
   if (text.includes("\n") || text.includes("\r")) {
     throw new Error("entry must be a single line");
+  }
+  if (text !== text.trim()) {
+    throw new Error("entry must not have leading or trailing whitespace");
+  }
+  if (/[\u0000-\u001F\u007F]/.test(text)) {
+    throw new Error("entry must not contain control characters");
+  }
+  if (!/[.!?]$/.test(text)) {
+    throw new Error("entry must end with sentence punctuation");
   }
 }
 
